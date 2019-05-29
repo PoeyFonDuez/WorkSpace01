@@ -5,7 +5,7 @@
 import pandas
 from pandas import DataFrame 
 
-sth = pandas.read_csv("test info.csv") # read file
+sth = pandas.read_csv("test info.csv", dtype = str) # read file
 #sth = pandas.read_csv("test info.csv", index_col ="Name")
 
 print(sth) #print table
