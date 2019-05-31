@@ -2,10 +2,10 @@
 #1.sudo aptitude install python3-pip
 #2.pip3 install pandas 
 #pandas lib : For CSV file reading
-import pandas
+import pandas, os
 from pandas import DataFrame 
 
-sth = pandas.read_csv("test info.csv", dtype = str) # read file
+sth = pandas.read_csv("test info.csv", dtype = str) # read file as string type
 #sth = pandas.read_csv("test info.csv", index_col ="Name")
 
 print(sth) #print table
@@ -18,6 +18,9 @@ Cars = {'Brand': ['Honda Civic','Toyota Corolla','Ford Focus','Audi A4'],
         "Dealer" : ["dealer1","dealer2","dealer3","dealer4"]
         }
 df = DataFrame(Cars, columns = ["Brand","Price","Dealer"])# create table info DataFrame(dict)
-
-export_csv = df.to_csv(r'/home/perspective/Desktop/WorkSpace01/test_write_file.csv', index = None, header = True)
+filepath = os.getcwd()+"/test_write_file.csv"
+export_csv = df.to_csv(r'filepath', index = None, header = True)
  # File writing - df.to_csv(r"filepath/filename.csv", index = None, header = True)
+
+#print(os.path.dirname(os.path.abspath(__"csv_reader.py"__)))
+print(os.getcwd())
