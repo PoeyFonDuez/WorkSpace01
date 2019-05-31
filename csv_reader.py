@@ -18,9 +18,9 @@ Cars = {'Brand': ['Honda Civic','Toyota Corolla','Ford Focus','Audi A4'],
         "Dealer" : ["dealer1","dealer2","dealer3","dealer4"]
         }
 df = DataFrame(Cars, columns = ["Brand","Price","Dealer"])# create table info DataFrame(dict)
-filepath = os.getcwd()+"/test_write_file.csv"
+
+filepath = os.getcwd()+"/test_write_file.csv" #os.getcwd() = get current filepath
 export_csv = df.to_csv(r'filepath', index = None, header = True)
  # File writing - df.to_csv(r"filepath/filename.csv", index = None, header = True)
 
-#print(os.path.dirname(os.path.abspath(__"csv_reader.py"__)))
-print(os.getcwd())
+
