@@ -1,4 +1,5 @@
-import random
+import random,pandas,os
+from pandas import DataFrame 
 
 def id_generator():
 ###single citizen id generator
@@ -29,16 +30,29 @@ def id_generator():
 		
 	#print(tempsum)
 	#return tempstr
-			
+def savefile(id_list):
+###input with list save id to CSV_file
+	iddict = {"id":id_list}	
+	df = DataFrame(iddict, columns = ["id"])
+	filepath = os.getcwd()+"/id_gen.csv" 
+	export_csv = df.to_csv(r'filepath', index = None, header = True)
+	print(filepath)
+	print(iddict)			
 
 def mass_idgen(amount):
 ###amount selector which call citizen generator
+	idlist = []
 	num = 1
 	for i in range(int(amount)):
-		print(num," : ", id_generator())	
+		temp_id = id_generator()
+		print(num," : ", temp_id)	
 		num = num+1
-	
+		idlist.append(temp_id)
+	print(idlist)	
+	savefile(idlist)	
 	mass_idgen(input("Gen More ID enter number / Exit Press CTRL + C: "))	
+	return idlist
+
 
 print("-------- This is citizen ID generator --------")
 mass_idgen(input("Enter amout of ID you want: "))
