@@ -20,7 +20,7 @@ Cars = {'Brand': ['Honda Civic','Toyota Corolla','Ford Focus','Audi A4'],
 df = DataFrame(Cars, columns = ["Brand","Price","Dealer"])# create table info DataFrame(dict)
 
 filepath = os.getcwd()+"/test_write_file.csv" #os.getcwd() = get current filepath
-export_csv = df.to_csv(r'filepath', index = None, header = True)
+export_csv = df.to_csv(filepath, index = None, header = True)
  # File writing - df.to_csv(r"filepath/filename.csv", index = None, header = True)
 
 

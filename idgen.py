@@ -35,7 +35,7 @@ def savefile(id_list):
 	iddict = {"id":id_list}	
 	df = DataFrame(iddict, columns = ["id"])
 	filepath = os.getcwd()+"/id_gen.csv" 
-	export_csv = df.to_csv(r'filepath', index = None, header = True)
+	export_csv = df.to_csv(filepath, index = None, header = True)
 	print(filepath)
 	print(iddict)			
 
