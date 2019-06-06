@@ -21,6 +21,6 @@ df = DataFrame(Cars, columns = ["Brand","Price","Dealer"])# create table info Da
 
 filepath = os.getcwd()+"/test_write_file.csv" #os.getcwd() = get current filepath
 export_csv = df.to_csv(filepath, index = None, header = True)
- # File writing - df.to_csv(r"filepath/filename.csv", index = None, header = True)
+ # File writing - df.to_csv(filepath/filename.csv, index = None, header = True)
 
 
