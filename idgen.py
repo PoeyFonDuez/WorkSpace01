@@ -36,8 +36,7 @@ def savefile(id_list):
 	df = DataFrame(iddict, columns = ["id"])
 	filepath = os.getcwd()+"/id_gen.csv" 
 	export_csv = df.to_csv(filepath, index = None, header = True)
-	print(filepath)
-	print(iddict)			
+	print("-----CSV file created/saved success-----")		
 
 def mass_idgen(amount):
 ###amount selector which call citizen generator
@@ -48,7 +47,7 @@ def mass_idgen(amount):
 		print(num," : ", temp_id)	
 		num = num+1
 		idlist.append(temp_id)
-	print(idlist)	
+	
 	savefile(idlist)	
 	mass_idgen(input("Gen More ID enter number / Exit Press CTRL + C: "))	
 	return idlist
