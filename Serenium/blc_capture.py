@@ -32,18 +32,22 @@ def Privilege():
 
 def dothing():
     dateSTR = datetime.datetime.now().strftime("%H:%M:%S" )
-    print("good to go")
+    print(dateSTR)
     setUp()
     Privilege()
     driver.close()
+    sys.exit()
    
 
 
 
-schedule.every().day.at("18:36").do(dothing)
+schedule.every().day.at("15:19").do(dothing)
 while True: 
   
     # Checks whether a scheduled task  
     # is pending to run or not 
     schedule.run_pending() 
+    currentTime = datetime.datetime.now().strftime("%H:%M:%S" )
+
+    print(currentTime)
     time.sleep(1) 
